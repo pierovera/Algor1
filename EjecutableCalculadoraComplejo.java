@@ -16,6 +16,9 @@ public class EjecutableCalculadoraComplejo {
 	
 	menu();
 	in = sc.nextLine();
+	if(in.length() < 1)
+	    in = " ";
+	
 	op = in.charAt(0);
 	while (op != 's') {
 	    c3 = null;
@@ -48,6 +51,9 @@ public class EjecutableCalculadoraComplejo {
 
 	    menu();
 	    in = sc.nextLine();
+	    if(in.length() < 1)
+		in = " ";
+		
 	    op = in.charAt(0);
 	}
 			
