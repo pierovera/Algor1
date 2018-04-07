@@ -6,27 +6,16 @@ import java.util.Scanner;
  */
 
 public class Arreglos {
-    public static void main(String[] args) {
-	int[] arr = {1, 2, 3, 5, 6, 2, 1};
-
-	leer(arr);
-	imprimir(arr);
-    }
+    private static final int MAX = 100;
     
-    private static void imprimir(int[] arr) {
-	Scanner sc = new Scanner(System.in);
-	int n;
-	
-	System.out.printf("Cuantos elementos imprimo? (max %d): ", arr.length);
-	n = sc.nextInt();
-	
-	System.out.printf("[");
+    private static void imprimir(double[] arr, int n) {
+	System.out.printf("[ ");
 	for(int i = 0; i < n; i++) 
-	    System.out.printf("%d ", arr[i]);
+	    System.out.printf("%.2f ", arr[i]);
 	System.out.printf("]\n");
     }
     
-    private static int leer(int[] arr) {
+    private static int leer(double[] arr) {
 	Scanner sc = new Scanner(System.in);
 	int n;
 
@@ -35,10 +24,18 @@ public class Arreglos {
 	
 	for(int i = 0; i < n; i++) {
 	    System.out.printf("Numero %d: ", i + 1);
-	    arr[i] = sc.nextInt();
+	    arr[i] = sc.nextDouble();
 	}
 
 	return n;
+    }
+
+    public static void main(String[] args) { 
+	double[] arr = new double[MAX];
+	int sz;
+	
+	sz = leer(arr);
+	imprimir(arr, sz);
     }
 }
 
