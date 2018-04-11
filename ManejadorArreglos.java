@@ -16,10 +16,7 @@ public class ManejadorArreglos {
     }
 
     public static double promedio(double[] arr, int sz) {
-	double sum = 0;
-
-	for(int i = 0; i < sz; i++)
-	    sum += arr[i];
+	double sum = suma(arr, sz);
 
 	// Asumo al menos un elemento
 	return sum/sz;
@@ -98,22 +95,29 @@ public class ManejadorArreglos {
     }
 
     public static void swap(double[] arr, int a, int b) {
-	// asumo que existen a,b
-	if(a < MAX && b < MAX && a > 0 && b > 0) {
+	// asumo que existen a,b y estan en el rango correcto
 	    double tmp = arr[a];
 	    
 	    arr[a] = arr[b];
 	    arr[b] = tmp;
-	}
     }
 
     public static void invert(double[] arr, int sz) {
-	double tmp;
+	for(int i = 0; i < (double)sz/2; i++) 
+	    swap(arr, i, (sz - i - 1));
+    }
 
-	for(int i = 0; i < (double)sz/2; i++) {
-	    tmp = arr[i];
-	    arr[i] = arr[sz - i - 1];
-	    arr[sz - i - 1] = tmp;
-	}
+    public static void movDer(double[] arr, int sz, int k) {
+	for(int i = 0; (i+k) < sz; i++) 
+	    arr[sz - i - 1] = arr[sz - k - i - 1];
+	for(int i = 0; i < k; i++)
+	    arr[i] = 0;
+    }
+
+    public static void movIzq(double[] arr, int sz, int k) {
+	for(int i = 0; (i+k) < sz; i++)
+	    arr[i] = arr[i + k];
+	for(int i = 0; i < k; i++)
+	    arr[sz - i - 1] = 0;
     }
 }

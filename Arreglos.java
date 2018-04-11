@@ -65,6 +65,12 @@ public class Arreglos {
 			  	
 	outList = ManejadorArreglos.posMinN(arr, sz, 10.0);
 	System.out.printf("Pos min 10.0: %s\n", outList.toString());
+
+	ManejadorArreglos.movDer(arr, sz, 4);
+	imprimir(arr, sz);
+
+	ManejadorArreglos.movIzq(arr, sz, 4);
+	imprimir(arr, sz);
 	
 	ManejadorArreglos.swap(arr, 3, 6);
 	imprimir(arr, sz);
