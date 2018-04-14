@@ -13,27 +13,35 @@ public class Rectangulo {
 	this.h = h;
     }
     
-    double getB() {
+    public double getB() {
 	return b;
     }
 
-    double getH() {
+    public double getH() {
 	return h;
     }
 
-    void setB(double b) {
+    public void setB(double b) {
 	this.b = b;
     }
 
-    void setH(double h) {
+    public void setH(double h) {
 	this.h = h;
     }
 
-    double area() {
+    public String toString() {
+	StringBuilder str = new StringBuilder();
+
+	return str.append("Base: ").append(b)
+	    .append("\nAltura: ").append(h)
+	    .toString();
+    }
+    
+    public double area() {
 	return b*h;
     }
 
-    double perim(){
+    public double perim(){
 	return 2 * (h+b);
     }
 
