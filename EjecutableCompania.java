@@ -1,5 +1,10 @@
 import java.util.Scanner;
 
+/* Piero Vera
+ * 2018-04-12
+ * Ejecutable para clase Compania
+ */
+
 public class EjecutableCompania {
     public static void main(String[] args) {
 	Compania c = new Compania("Empaques SA de CV", "Av Constitucion 43",

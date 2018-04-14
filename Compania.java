@@ -1,3 +1,8 @@
+/* Piero Vera
+ * 2018-04-12
+ * Clase de Compania
+ */
+
 public class Compania {
     private String nombre;
     private String direccion;
