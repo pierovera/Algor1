@@ -118,10 +118,12 @@ public class ArrG {
 	while (min <= max) {
 	    pos = (min + max) / 2;
 
-	    if(arr[pos].compareTo(x) > 0)
+	    if(arr[pos].compareTo(x) > 0) 
 		max = pos - 1;
-	    else if (arr[pos].compareTo(x) < 0)
+	    else if (arr[pos].compareTo(x) < 0) {
 		min = pos + 1;
+		pos++;
+	    }
 	    else
 		return pos;
 	}
