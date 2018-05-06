@@ -39,7 +39,8 @@ public class PruebaLista {
 
 	if (lst.contains(tmp))
 	    System.out.printf("Contiene %s\n", tmp);
-
+	System.out.printf("Donde %s? %d\n", tmp, lst.indexOf(tmp));
+	
 	tmp = lst.get(5);
 	if (lst.contains(tmp))
 	    System.out.printf("Contiene %s (elemento %d)\n", tmp,
