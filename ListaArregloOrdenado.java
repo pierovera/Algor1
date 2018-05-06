@@ -19,9 +19,11 @@ public class ListaArregloOrdenado <T extends Comparable <T>> {
     }
 
     public ListaArregloOrdenado(T[] b) {
-	n = b.length;
-	arr = (T[]) new Comparable[2 * n];
-	System.arraycopy(b, 0, arr, 0, n);
+	int sz = b.length;
+	arr = (T[]) new Comparable[2 * sz];
+	
+	for(int i = 0; i < (sz); i++) 
+	    add(b[i]);
     }
     
     public String toString() {
@@ -37,17 +39,21 @@ public class ListaArregloOrdenado <T extends Comparable <T>> {
 
     public boolean add(T x) {
 	int i = 0;
-
+	boolean res = false;
+	
 	if (n >= arr.length)
 	    expandCapacity();
 	
-	while(i < n && arr[i].compareTo(x) < 0)
-	    i++;
+	i = ArrG.binarySearch(arr, n, x);
+	
+	if(i < 0) {
+	    i = -(i + 1);
+	    n = ArrG.unCorrDer(arr, n, i);
+	    arr[i] = x;
+	    res = true;
+	}
 
-	n = ArrG.unCorrDer(arr, n, i);
-	arr[i] = x;
-
-	return true; //???
+	return res;
     }
 
     public T remove(int i) {	
@@ -103,7 +109,7 @@ public class ListaArregloOrdenado <T extends Comparable <T>> {
     public T get(int i) {
 	T res = null;
 
-	if(i < n)
+	if(i < n && i >= 0)
 	    res = arr[i];
 
 	return res;
