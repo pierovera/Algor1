@@ -131,6 +131,18 @@ public class ArrG {
 	return -(pos + 1);
     }
 
+    public static <T> int busquedaLin(T[] arr, int n, T x) {
+	int i = 0;
+
+	while(i < n) {
+	    if(arr[i].equals(x))
+		return i;
+	    i++;
+	}
+	
+	return -1;
+    }
+
     public static <T> int unCorrDer(T[] arr, int n, int pos) {
 	if (n >= arr.length)
 	    return n;
